@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ma Calculatrice</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="img/calculatrice.ico">
+        <script src="https://kit.fontawesome.com/c7b012a4c4.js" crossorigin="anonymous"></script>
+    </head>
+ 
+    <body>
+        <div class="container">
+            <div class="row">
+               
+                <div class="contenu">
+                    <p>
+                         1er Nombre : <input id="input1">
+                    </p>
+                    <p style="margin-left: 64px">                       
+                        Operateurs De Calcul :
+                        <button id="addition" onclick="Additionne()" style="color: coral;">+</button>
+                        <button id="soustraction" onclick="Soustract()" style="color: coral;">-</button>
+                        <button id="multiplication" onclick="Multiply()" style="color: coral;">x</button>
+                        <button id="division" onclick="Divide()" style="color: coral;">/</button></p>
+                    <p style="margin-left: 13px">
+                         2eme Nombre : <input id="input2">
+                    </p>     
+                    <p>Resultat
+                        <button id="egal1" onclick="Egal1()" style="display: none ; color: coral;">=</button>
+                        <button id="egal2" onclick="Egal2()" style="display: none ; color: coral;">=</button>
+                        <button id="egal3" onclick="Egal3()" style="display: none ; color: coral;">=</button>
+                        <button id="egal4" onclick="Egal4()" style="display: none ; color: coral;">=</button> 
+                        <p class="resultat" style="position: absolute;border: black solid 1.5px;padding-right: 10px;padding-left: 10px;padding-bottom: 1px;padding-top: 2px;color: coral;display: none;"></p>
+                    </p>
+                
+                    <br><br>
+                
+                </div>
+            </div>
+ 
+        </div>
+      <script>
+  
+// 1. Fonction addition
+function Additionne() {
+    let affichage = document.getElementById('egal1') ;
+    affichage.style.display = 'inline';
+    let affichage2 = document.getElementById('egal2') ;
+    affichage2.style.display = 'none';
+    let affichage3 = document.getElementById('egal3') ;
+    affichage3.style.display = 'none';
+    let affichage4 = document.getElementById('egal4') ;
+    affichage4.style.display = 'none';
+    
+}
+  
+// 2. Fonction soustraction
+function Soustract() {
+    let affichage = document.getElementById('egal2') ;
+    affichage.style.display = 'inline';
+    let affichage2 = document.getElementById('egal4') ;
+    affichage2.style.display = 'none';
+    let affichage3 = document.getElementById('egal1') ;
+    affichage3.style.display = 'none';
+    let affichage4 = document.getElementById('egal3') ;
+    affichage4.style.display = 'none';
+    
+}
+  
+// 3. Fonction multiplication
+function Multiply() {
+    let affichage = document.getElementById('egal3') ;
+    affichage.style.display = 'inline';
+    let affichage2 = document.getElementById('egal4') ;
+    affichage2.style.display = 'none';
+    let affichage3 = document.getElementById('egal2') ;
+    affichage3.style.display = 'none';
+    let affichage4 = document.getElementById('egal1') ;
+    affichage4.style.display = 'none';
+    
+}
+  
+// 4. Fonction division
+function Divide() {
+    let affichage = document.getElementById('egal4') ;
+    affichage.style.display = 'inline';
+    let affichage2 = document.getElementById('egal1') ;
+    affichage2.style.display = 'none';
+    let affichage3 = document.getElementById('egal2') ;
+    affichage3.style.display = 'none';
+    let affichage4 = document.getElementById('egal3') ;
+    affichage4.style.display = 'none';
+    
+}
+
+// 5. Fonctions egals
+
+function Egal1() {
+    var input1 = "";
+    var input2 = "";
+    var resultat = "";
+    input1 = document.getElementById("input1").value;
+    input2 = document.getElementById("input2").value;
+    resultat = parseInt(input1) + parseInt(input2);
+     console.log("addition !");
+     console.log(resultat);
+     document.getElementsByClassName("resultat")[0].innerHTML = resultat+' <br>';
+     document.getElementsByClassName("resultat")[0].style.display = 'inline';
+     document.getElementsByClassName("resultat2")[0].innerHTML = input1 +'+'+ input2 +'='+ resultat;
+
+}
+  
+function Egal2() {
+    var input1 = "";
+      var input2 = "";
+      var resultat = "";
+      input1 = document.getElementById("input1").value;
+      input2 = document.getElementById("input2").value;
+      resultat = input1 - input2;
+      console.log("soustraction !");
+      console.log(resultat);
+      document.getElementsByClassName("resultat")[0].innerHTML = resultat+' <br>';
+      document.getElementsByClassName("resultat")[0].style.display = 'inline';
+      document.getElementsByClassName("resultat2")[0].innerHTML = input1 +'-'+ input2 +'='+ resultat;
+
+}
+
+function Egal3() {
+      var input1 = "";
+      var input2 = "";
+      var resultat = "";
+      input1 = document.getElementById("input1").value;
+      input2 = document.getElementById("input2").value;
+      resultat = input1 * input2;
+      console.log("multiplication !");
+      console.log(resultat);
+      document.getElementsByClassName("resultat")[0].innerHTML = resultat+' <br>';
+      document.getElementsByClassName("resultat")[0].style.display = 'inline';
+      document.getElementsByClassName("resultat2")[0].innerHTML = input1 +'x'+ input2 +'='+ resultat;
+
+}
+
+function Egal4() {
+      var input1 = "";
+      var input2 = "";
+      var resultat = "";
+      input1 = document.getElementById("input1").value;
+      input2 = document.getElementById("input2").value;
+      resultat = input1 / input2;
+      console.log("division !");
+      console.log(resultat);
+      document.getElementsByClassName("resultat")[0].innerHTML = resultat+' <br>';
+      document.getElementsByClassName("resultat")[0].style.display = 'inline';
+
+}
+
+      </script>
+      <br><br><br>
+    </body>
+</html>

@@ -1,0 +1,15 @@
+@font-face 
+
+{  font-family: Quicksand ; 
+    src: url('fonts/Quicksand-Medium.ttf') 
+    }
+
+.contenu {
+    margin-top: 174px;
+}
+body {
+    background: linear-gradient(to right,lightgray 0%,lightblue 100%);
+    font-family: Quicksand;
+    text-align: center;
+}
+
