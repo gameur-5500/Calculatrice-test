@@ -11,7 +11,40 @@
     <body>
         <div class="container">
             <div class="row">
-               
+                <center><h2>Bienvenue sur Ma Calculatrice en ligne</h2></center>
+                <br><br><p>- Bonjour et Bienvenue Cher Visiteur vous êtes a l'endroit ideal pour faire tout vos calculs (en ligne)</p>
+                <button id="montrer1"><i class="fas fa-sort-down"></i> Aide</button>
+                <div style="display: none;" id="cacher1">
+                <p>1. Tout d'abord vous devez selectionner la quantiter de nombres a utiliser dans votre calcul (2,3...)  </p>
+                <p>Image :</p>
+                <a href="./img/Ma calculatrice 2eme image.png" target="_blank"><img src="" style="border: black solid 1px;height: 250px;"></a>
+                <p>2. Apres , vous devez choisir les nombres et les mettre a leurs place (1er nombre , 2eme nombre ...)</p>
+                <p>Image :</p>
+                <a target="_blank" href="./img/Ma calculatrice 3eme image.png"><img src="img/Ma calculatrice 3eme image.png" style="border: black solid 1px;height: 250px;width: 500px"></a>
+                <p>3. Apres cela vous allez choisir votre ou vos Operateur de Calcul</p>
+                <p>Image :</p>
+                <a target="_blank" href="./img/Ma Calculatrice 4eme image.png"><img src="img/Ma Calculatrice 4eme image.png" style="border: black solid 1px;height: 250px;width: 500px;"></a>
+                <p>4. Apres avoir fait toutes ces étapes le bouton égal devrait s'afficher , apres avoir apuiyer dessus le resultat devrait s'afficher</p>
+                <p>5. Bonus , Au dessus de la calculatrice il y a un bouton avec une montre dedans si vous appuyez dessus il y a votre dernier calcul qui s'affichera . </p>
+                <p>Resumer de toutes les étapes (sauf l'etape 5) en une image :</p>
+                <a href="./img/Ma calculatrice 1er image.png" target="_blank"><img src="img/Ma calculatrice 1er image.png" style="border: black solid 1px;height: 250px;"></a>
+                </div>
+                <script>
+                    const aide = document.getElementById('montrer1');
+                                        aide.addEventListener('click', function() {          
+                                            const aide2 = document.getElementById('cacher1');
+                                            if(aide2.style.display=="block"){
+                                            aide.style.transition = 'all 1.0s ease';
+                                            aide2.style.display = "none";
+                                            aide.innerHTML = '<i class="fas fa-sort-down"></i> Aide';
+                                            }else{
+                                            aide.style.transition = 'all 1.0s ease';
+                                            aide2.style.display = "block";
+                                            aide.innerHTML = '<i class="fas fa-sort-up"></i> Aide'
+                                            }
+                  }); 
+                                    
+                    </script>
                 <div class="contenu">
                     <p>
                          1er Nombre : <input id="input1">
@@ -30,10 +63,13 @@
                         <button id="egal2" onclick="Egal2()" style="display: none ; color: coral;">=</button>
                         <button id="egal3" onclick="Egal3()" style="display: none ; color: coral;">=</button>
                         <button id="egal4" onclick="Egal4()" style="display: none ; color: coral;">=</button> 
-                        <p class="resultat" style="position: absolute;border: black solid 1.5px;padding-right: 10px;padding-left: 10px;padding-bottom: 1px;padding-top: 2px;color: coral;display: none;"></p>
+                        <p class="resultat" style="position: absolute;border: black solid 1.5px;padding-right: 10px;padding-left: 10px;padding-bottom: 1px;padding-top: 2px;color: coral;display: none;margin-left: 67px;margin-top: -40px;"></p>
                     </p>
                 
                     <br><br>
+                    <div class="footer" style="position: absolute;">
+                        <hr>Cette Calculatrice a été conçu en JAVASCRIPT , en HTML5 et en CSS3 par Adam Riche . Cette calculatrice a pour but d'accomplir toutes vos taches (calculs) en ligne <hr>
+                    </div>    
                 
                 </div>
             </div>
@@ -155,6 +191,5 @@ function Egal4() {
 }
 
       </script>
-      <br><br><br>
     </body>
 </html>
